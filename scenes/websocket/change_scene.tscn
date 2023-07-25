@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr8plcu22qwb"]
+
+[ext_resource type="Script" path="res://scripts/websocket/change_scene.gd" id="1_fbure"]
+
+[node name="change_scene" type="Node"]
+script = ExtResource("1_fbure")
