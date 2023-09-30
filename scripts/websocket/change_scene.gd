@@ -1,8 +1,15 @@
 extends Node
 
-const ObsWebsocket: GDScript = preload("res://addons/obs-websocket/obs-websocket.gd")
 
-var obs
+var obs = ObsWebsocketSetup.obs
+
 
 func action():
+	print(obs.send_command("GetSceneList"))
+	change_scene()
+
+func set_button_scene():
+	pass
+
+func change_scene():
 	pass

@@ -1,14 +1,16 @@
 extends Control
 
+
 const ObsWebsocket: GDScript = preload("res://addons/obs-websocket/obs-websocket.gd")
 
-var obs : Node
+var obs : Node = ObsWebsocket.new()
 
 
 func start_obs_websocket() -> void:
-	obs = ObsWebsocket.new()
 	add_child(obs)
 	obs.password = ObsWebsocketSettings.password
+	obs.host = ObsWebsocketSettings.host
+	obs.port = ObsWebsocketSettings.port
 	
 	obs.connect("data_received", Callable(self,"_obs_data_received"))
 	obs.data_received.connect(func(data) -> void:

@@ -1,10 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://f1m6h4jojudh"]
 
 [ext_resource type="Script" path="res://scripts/interface/graphical_user_interface.gd" id="1_57kfj"]
+[ext_resource type="Theme" uid="uid://ch3edprectoa" path="res://themes/Kaizen.theme" id="1_amlky"]
 [ext_resource type="PackedScene" uid="uid://b1ye0d5616se3" path="res://scenes/interface/main_grid.tscn" id="2_d2cxe"]
 [ext_resource type="PackedScene" uid="uid://c64qx3hvedkve" path="res://scenes/interface/connection_settings.tscn" id="3_ulaag"]
-
-[sub_resource type="Theme" id="Theme_03af3"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -13,10 +12,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_03af3")
+theme = ExtResource("1_amlky")
 script = ExtResource("1_57kfj")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,18 +23,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="MainGrid" parent="PanelContainer/VBoxContainer" instance=ExtResource("2_d2cxe")]
+[node name="MainGrid" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("2_d2cxe")]
 layout_mode = 2
 
-[node name="SettingsButton" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 text = "SETTINGS
 "
 
-[node name="ConnectionSettings" parent="PanelContainer/VBoxContainer" instance=ExtResource("3_ulaag")]
+[node name="ConnectionSettings" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("3_ulaag")]
 visible = false
 layout_mode = 2

@@ -1,11 +1,12 @@
 extends Control
 
-@onready var settings_button = get_node('PanelContainer/VBoxContainer/SettingsButton')
-@onready var connection_settings = get_node('PanelContainer/VBoxContainer/ConnectionSettings')
-@onready var main_grid = get_node('PanelContainer/VBoxContainer/MainGrid')
+@onready var settings_button = get_node('Panel/MarginContainer/VBoxContainer/SettingsButton')
+@onready var connection_settings = get_node('Panel/MarginContainer/VBoxContainer/ConnectionSettings')
+@onready var main_grid = get_node('Panel/MarginContainer/VBoxContainer/MainGrid')
 
 
 func _ready() -> void:
+	set_theme(ThemeD.current_theme)
 	settings_button.pressed.connect(swap_menu)
 
 func swap_menu() -> void:

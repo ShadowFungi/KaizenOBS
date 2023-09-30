@@ -12,6 +12,7 @@ config_version=5
 
 config/name="KaizenOBS"
 run/main_scene="res://scenes/interface/graphical_user_interface.tscn"
+config/custom_user_dir_name="fungistudio/kaizenobs"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
@@ -19,6 +20,12 @@ config/icon="res://icon.svg"
 
 ObsWebsocketSettings="*res://scripts/autoloads/websocket_settings.gd"
 ObsWebsocketSetup="*res://scripts/autoloads/websocket_setup.gd"
+MenuCount="*res://scripts/autoloads/menu_count.gd"
+ThemeD="*res://scripts/autoloads/theme.gd"
+
+[dotnet]
+
+project/assembly_name="KaizenOBS"
 
 [editor_plugins]
 

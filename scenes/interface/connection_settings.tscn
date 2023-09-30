@@ -110,6 +110,20 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Connect to OBS"
 
+[node name="SaveLoadContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SaveButton" type="Button" parent="VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/SaveLoadContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save"
+
+[node name="LoadButton" type="Button" parent="VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer/SaveLoadContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reload"
+
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
